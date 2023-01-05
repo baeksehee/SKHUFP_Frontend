@@ -4,30 +4,58 @@ export default function Login() {
     return (
         <Container>
             <StyledH1>로그인</StyledH1>
-                <span>아이디   </span>
-            <StyledDiv>d </StyledDiv>
+            <div>
+                <div>
+                    <StyledSpan>아이디</StyledSpan>
+                    <StyledInput type="text" />
+                </div>
+                <div>
+                    <StyledSpan>비밀번호</StyledSpan>
+                    <StyledInput type="password" />
+                </div>
+            </div>
+            <StyledBtn>로그인하기</StyledBtn>
         </Container>
     )
 }
 
 const Container = styled.div`
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
+
+margin-top: 18vh;
 `;
 
 const StyledH1 = styled.h1`
-float: left;
+margin-right: 20vw;
 `;
 
-const StyledDiv = styled.div`
+const StyledInput = styled.input`
+width: 15vw;
+height: 23px;
+margin-top: 1rem;
+float: right;
+
 border: none;
-background-color: #d9d9d9;
+background-color: #efefef;
+outline: none;
+
+`;
+
+const StyledSpan = styled.span`
+margin-right: 2rem;
+margin-top: 1rem;
+float: left;
+
+font-size: 21px;
 `;
 
 const StyledBtn = styled.button`
 width: 15vw;
 height: 25px;
+margin-top: 2rem;
 
 border: 1px solid #d0bcf2;
 
