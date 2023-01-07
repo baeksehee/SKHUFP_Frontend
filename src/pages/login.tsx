@@ -45,7 +45,6 @@ float: right;
 border: none;
 background-color: #efefef;
 outline: none;
-
 `;
 
 const StyledSpan = styled.span`

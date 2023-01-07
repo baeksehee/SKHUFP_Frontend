@@ -1,16 +1,27 @@
 import styled from "styled-components";
 import Grid from "../components/Grid";
 import List from "../components/List";
+import Nav from "../components/Nav";
 
-export default function Main() {
-    return(
-        <Container>
-            <List />
-            <Grid />
-            <StyledAdd>➕</StyledAdd>
-        </Container>
+export default function F_Main() {
+    return (
+        <>
+            <StyledS>가을</StyledS>
+            <Nav />
+            <Container>
+                <List />
+                <Grid />
+                <StyledAdd>➕</StyledAdd>
+            </Container>
+        </>
     )
 }
+
+const StyledS = styled.span`
+float: right;
+margin-top: 1rem;
+margin-right: 2rem;
+`;
 
 const Container = styled.div`
 display: flex;

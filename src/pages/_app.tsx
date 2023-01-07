@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app'
 import Link from 'next/link'
-import styled from 'styled-components';
 import GlobalStyle from '../../styles/GlobalStyle'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -11,7 +10,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <Link href={'/'}>main </Link>
         <Link href={'/login'}>login </Link>
         <Link href={'/signup'}>signup </Link>
-        <Link href={'/main'}>main2.. </Link>
+        <Link href={'/season'}>season </Link>
+        <Link href={'/s_main'}>S_main </Link>
+        <Link href={'/su_main'}>SU_main </Link>
+        <Link href={'/f_main'}>F_main </Link>
+        <Link href={'/w_main'}>W_main </Link>
+        <Link href={'/e_main'}>E_main </Link>
         <Link href={'/daily'}>daily </Link>
         <Link href={'/d_add'}>daily_add </Link>
       </nav>

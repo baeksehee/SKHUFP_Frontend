@@ -1,26 +1,37 @@
 import styled from "styled-components";
-import Grid from "../components/Grid";
-import List from "../components/List";
+import Nav from "../components/Nav";
 
 export default function D_add() {
-    return(
-        <Container>
-            <List />
-            <StyledGrid>
-                <Item><input type="radio" /></Item>
-                <Item><input type="radio" /></Item>
-                <Item><input type="radio" /></Item>
-                <Item><input type="radio" /></Item>
-                <Item><input type="radio" /></Item>
-                <Item><input type="radio" /></Item>
-                <Item><input type="radio" /></Item>
-                <Item><input type="radio" /></Item>
-                <Item><input type="radio" /></Item>
-            </StyledGrid>
-            <StyledBtn>선택 완료</StyledBtn>
-        </Container>
+    return (
+        <>
+            <Nav />
+            <Container>
+                <StyledNav>
+                    상의 | 하의 | 아우터 | 신발 | 가방 | 잡화
+                </StyledNav>
+                <StyledGrid>
+                    <Item><input type="radio" /></Item>
+                    <Item><input type="radio" /></Item>
+                    <Item><input type="radio" /></Item>
+                    <Item><input type="radio" /></Item>
+                    <Item><input type="radio" /></Item>
+                    <Item><input type="radio" /></Item>
+                    <Item><input type="radio" /></Item>
+                    <Item><input type="radio" /></Item>
+                    <Item><input type="radio" /></Item>
+                </StyledGrid>
+                <div>
+                    <StyledBtn>선택 완료</StyledBtn>
+                    <StyledSpan>선택 안 함</StyledSpan>
+                </div>
+            </Container>
+        </>
     )
 }
+
+const StyledNav = styled.nav`
+cursor: pointer;
+`;
 
 const Container = styled.div`
 display: flex;
@@ -55,4 +66,11 @@ cursor: pointer;
     color: #d0bcf2;
     background-color: white;
   }
+`;
+
+const StyledSpan = styled.div`
+float: right;
+
+color: #d9d9d9;
+cursor: pointer;
 `;
