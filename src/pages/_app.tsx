@@ -11,9 +11,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <Link href={'/'}>main </Link>
         <Link href={'/login'}>login </Link>
         <Link href={'/signup'}>signup </Link>
+        <Link href={'/seasonCloset'}>season </Link>
         <Link href={'/main'}>main2.. </Link>
         <Link href={'/daily'}>daily </Link>
         <Link href={'/d_add'}>daily_add </Link>
+        <Link href={'/addCloset'}>addCloset </Link>
+        <Link href={'/addDailylookTwo'}>addDailylookTwo </Link>
+        <Link href={'/closetDetail'}>closetDetail </Link>
       </nav>
       <Component {...pageProps} />
     </>
