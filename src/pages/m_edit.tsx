@@ -7,7 +7,7 @@ export default function M_edit() {
       <Nav />
       <Container>
         <StyledForm>
-          <StyledH3>수정</StyledH3>
+          <h1>수정</h1>
           <ImageDiv></ImageDiv>
           <InputDiv>
             <InputSmallDiv>
@@ -37,6 +37,10 @@ export default function M_edit() {
               </StyledSelectTwo>
             </InputSmallDiv>
             <InputSmallDiv>
+              <StyledSpan>이름</StyledSpan>
+              <StyledNameInput></StyledNameInput>
+            </InputSmallDiv>
+            <InputSmallDiv>
               <StyledSpan>메모</StyledSpan>
               <StyledMemoInput></StyledMemoInput>
             </InputSmallDiv>
@@ -49,30 +53,22 @@ export default function M_edit() {
 }
 
 const Container = styled.div`
-  margin: 0;
-  padding: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const StyledH3 = styled.h3`
-  font-size: 48px;
 `;
 
 const ImageDiv = styled.div`
   margin-left: 12.5vw;
   margin-top: 32px;
 
-  width: 13vw;
-  height: 26vh;
+  width: 10rem;
+  height: 10rem;
 
   background-color: #efefef;
 `;
 
 const StyledForm = styled.form`
-  width: 40vw;
   height: 813px;
 `;
 
@@ -84,23 +80,21 @@ const InputDiv = styled.div`
 
   margin-top: 5vh;
 `;
+
 const StyledLongSpan = styled.span`
   width: 12vw;
   float: left;
 
-  font-size: 26px;
+  font-size: 21px;
 `;
 
 const StyledSpan = styled.span`
   float: left;
 
-  font-size: 26px;
+  font-size: 21px;
 `;
 
 const InputSmallDiv = styled.div`
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
   margin-bottom: 3vh;
   padding: 0;
 
@@ -109,12 +103,12 @@ const InputSmallDiv = styled.div`
 
 const StyledSelect = styled.select`
   width: 27.5vw;
-  height: 55px;
+  height: 23px;
 
   float: right;
   text-align: center;
 
-  font-size: 20px;
+  font-size: 15px;
 
   background-color: #efefef;
   border: none;
@@ -122,15 +116,29 @@ const StyledSelect = styled.select`
 
 const StyledSelectTwo = styled.select`
   width: 27.5vw;
-  height: 55px;
+  height: 23px;
 
   float: right;
   text-align: center;
 
-  font-size: 20px;
+  font-size: 15px;
 
   background-color: #efefef;
   border: none;
+`;
+
+const StyledNameInput = styled.input`
+  width: 27.5vw;
+  height: 23px;
+
+  float: right;
+  text-align: center;
+
+  font-size: 15px;
+
+  background-color: #efefef;
+  border: none;
+  outline: none;
 `;
 
 const StyledMemoInput = styled.input`
@@ -138,22 +146,26 @@ const StyledMemoInput = styled.input`
   height: 143px;
 
   float: right;
-  text-align: center;
 
-  font-size: 20px;
+  font-size: 15px;
 
   background-color: #efefef;
   border: none;
+  outline: none;
 `;
 
 const StyledButton = styled.button`
-  width: 140px;
-  height: 40px;
+  width: 15vw;
+  height: 25px;
 
   float: right;
 
-  font-size: 24px;
-
   background-color: #d0bcf2;
-  border: none;
+  border: 1px solid #d0bcf2;
+  cursor: pointer;
+
+  &:hover {
+    color: #d0bcf2;
+    background-color: white;
+  }
 `;

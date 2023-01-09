@@ -8,17 +8,29 @@ export default function D_add() {
       <Container>
         <StyledForm>
           {" "}
-          <StyledH3>
-            <StyledSpan>데일리룩 이름</StyledSpan> <StyledInput></StyledInput>
-          </StyledH3>
-          <StyledDiv>
-            <TopDiv>상의</TopDiv>
-            <OuterDiv>아우터</OuterDiv>
-            <BagDiv>가방</BagDiv>
-            <ButtonDiv>하의</ButtonDiv>
-            <ShoesDiv>신발</ShoesDiv>
-            <EtcDiv>기타</EtcDiv>
-          </StyledDiv>
+          <h1>
+            <span>데일리룩 이름</span>
+            <StyledInput />
+          </h1>
+          <Container2>
+                    <StyledGrid>
+                        <Item />
+                        <Item />
+                        <Item />
+                        <StyledName>상의</StyledName>
+                        <StyledName>가방</StyledName>
+                        <StyledName>아우터</StyledName>
+                    </StyledGrid>
+                    <StyledGrid>
+                        <Item />
+                        <Item />
+                        <Item />
+                        <StyledName>하의</StyledName>
+                        <StyledName>신발</StyledName>
+                        <StyledName>기타</StyledName>
+                    </StyledGrid>
+                </Container2>
+
           <StyledButton>데일리룩 등록</StyledButton>
         </StyledForm>
       </Container>
@@ -32,16 +44,6 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const StyledH3 = styled.h3`
-  font-size: 38px;
-
-  margin-bottom: 6vh;
-`;
-
-const StyledSpan = styled.span`
-  margin-right: 2vw;
-`;
-
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -51,78 +53,57 @@ const StyledForm = styled.form`
 
 const StyledInput = styled.input`
   width: 24vw;
-  height: 50px;
+  height: 23px;
+  margin-left: 2vw;
 
   font-size: 20px;
 
   background-color: #efefef;
   border: none;
+  outline: none;
 `;
 
-const StyledDiv = styled.div`
-  //components의 Grid.tsx
-  display: grid;
-  grid-template-columns: 15vw 15vw 15vw;
-  grid-template-rows: 15vw 15vw;
+const Container2 = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 `;
 
-const TopDiv = styled.div`
-  margin: 1rem;
-  
-  text-align: center;
-
-  background-color: #eeeeee;
+const StyledGrid = styled.div`
+display: grid;
+grid-template-columns: 15vw 15vw 15vw;
+grid-template-rows: 15vw 60px;
 `;
 
-const OuterDiv = styled.div`
-  margin: 1rem;
+const Item = styled.div`
+margin: 1rem;
 
-  text-align: center;
-
-  background-color: #eeeeee;
+background-color: #eeeeee;
 `;
 
-const BagDiv = styled.div`
-  margin: 1rem;
+const StyledName = styled.button`
+margin: 1rem;
 
-  text-align: center;
-
-  background-color: #eeeeee;
-`;
-
-const ButtonDiv = styled.div`
-  margin: 1rem;
-
-  text-align: center;
-
-  background-color: #eeeeee;
-`;
-
-const ShoesDiv = styled.div`
-  margin: 1rem;
-
-  text-align: center;
-
-  background-color: #eeeeee;
-`;
-
-const EtcDiv = styled.div`
-  margin: 1rem;
-
-  text-align: center;
-
-  background-color: #eeeeee;
+border: 1px solid #d0bcf2;
+border-radius: 10px;
+background-color: #d0bcf2;
+opacity: 0.5;
+cursor: pointer;
 `;
 
 const StyledButton = styled.button`
-  margin-top: 12vh;
+  margin-top: 2em;
 
-  width: 265px;
-  height: 59px;
+  width: 15vw;
+  height: 25px;
 
   background-color: #d0bcf2;
+  border: 1px solid #d0bcf2;
+  cursor: pointer;
 
-  font-size: 24px;
-
-  border: none;
+  &:hover {
+    color: #d0bcf2;
+    background-color: white;
+  }
 `;

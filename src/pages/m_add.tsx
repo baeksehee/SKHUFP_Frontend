@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import Nav from "../components/Nav";
 
@@ -45,7 +46,9 @@ export default function M_add() {
               <StyledMemoInput></StyledMemoInput>
             </InputSmallDiv>
           </InputDiv>
-          <StyledButton>옷 등록</StyledButton>
+          <Link href="s_main">
+            <StyledButton>옷 등록</StyledButton>
+          </Link>
         </StyledForm>
       </Container>
     </>
@@ -62,8 +65,8 @@ const ImageDiv = styled.div`
   margin-left: 12.5vw;
   margin-top: 32px;
 
-  width: 13vw;
-  height: 26vh;
+  width: 10rem;
+  height: 10rem;
 
   background-color: #efefef;
 `;
@@ -103,12 +106,12 @@ const InputSmallDiv = styled.div`
 
 const StyledSelect = styled.select`
   width: 27.5vw;
-  height: 55px;
+  height: 23px;
 
   float: right;
   text-align: center;
 
-  font-size: 20px;
+  font-size: 15px;
 
   background-color: #efefef;
   border: none;
@@ -116,12 +119,12 @@ const StyledSelect = styled.select`
 
 const StyledSelectTwo = styled.select`
   width: 27.5vw;
-  height: 55px;
+  height: 23px;
 
   float: right;
   text-align: center;
 
-  font-size: 20px;
+  font-size: 15px;
 
   background-color: #efefef;
   border: none;
@@ -134,10 +137,11 @@ const StyledNameInput = styled.input`
   float: right;
   text-align: center;
 
-  font-size: 20px;
+  font-size: 15px;
 
   background-color: #efefef;
   border: none;
+  outline: none;
 `;
 
 const StyledMemoInput = styled.input`
@@ -150,16 +154,21 @@ const StyledMemoInput = styled.input`
 
   background-color: #efefef;
   border: none;
+  outline: none;
 `;
 
 const StyledButton = styled.button`
-  width: 140px;
-  height: 40px;
+  width: 15vw;
+  height: 25px;
 
   float: right;
 
-  font-size: 24px;
-
   background-color: #d0bcf2;
-  border: none;
+  border: 1px solid #d0bcf2;
+  cursor: pointer;
+
+  &:hover {
+    color: #d0bcf2;
+    background-color: white;
+  }
 `;
