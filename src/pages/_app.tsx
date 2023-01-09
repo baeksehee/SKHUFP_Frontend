@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
     <GlobalStyle />
-      <nav>
+      {/* <nav>
         <Link href={'/'}>main </Link>
         <Link href={'/login'}>login </Link>
         <Link href={'/signup'}>signup </Link>
@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Link href={'/m_edit'}>main_edit </Link>
         <Link href={'/daily'}>daily </Link>
         <Link href={'/d_add'}>daily_add</Link>
-      </nav>
+      </nav> */}
       <Component {...pageProps} />
     </>
   )

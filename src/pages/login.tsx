@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
+import Logo2 from "../components/Logo";
 
 export default function Login() {
     // const onClickAlert() => {
@@ -7,22 +8,25 @@ export default function Login() {
     // }
 
     return (
-        <Container>
-            <StyledH1>로그인</StyledH1>
-            <div>
+        <>
+            <Logo2 />
+            <Container>
+                <StyledH1>로그인</StyledH1>
                 <div>
-                    <StyledSpan>아이디</StyledSpan>
-                    <StyledInput type="text" />
+                    <div>
+                        <StyledSpan>아이디</StyledSpan>
+                        <StyledInput type="text" />
+                    </div>
+                    <div>
+                        <StyledSpan>비밀번호</StyledSpan>
+                        <StyledInput type="password" />
+                    </div>
                 </div>
-                <div>
-                    <StyledSpan>비밀번호</StyledSpan>
-                    <StyledInput type="password" />
-                </div>
-            </div>
-            <Link href="/season">
-                <StyledBtn>로그인하기</StyledBtn>
-            </Link>
-        </Container>
+                <Link href="/season">
+                    <StyledBtn>로그인하기</StyledBtn>
+                </Link>
+            </Container>
+        </>
     )
 }
 
@@ -32,7 +36,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 
-margin-top: 18vh;
+margin-top: 12vh;
 `;
 
 const StyledH1 = styled.h1`

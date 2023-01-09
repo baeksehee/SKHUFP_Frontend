@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function Logo() {
     return (
         <div>
-            <Link href="/season">
+            <Link href="/">
                 <StyledH1>My<br />Closet</StyledH1>
             </Link>
         </div>

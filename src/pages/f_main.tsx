@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import Grid from "../components/Grid";
 import List from "../components/List";
@@ -11,7 +12,9 @@ export default function F_Main() {
             <Container>
                 <List />
                 <Grid />
-                <StyledAdd>➕</StyledAdd>
+                <Link href="/m_add">
+                    <StyledAdd>➕</StyledAdd>
+                </Link>
             </Container>
         </>
     )

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import Nav from "../components/Nav";
 
@@ -25,7 +26,9 @@ export default function Daily() {
                         <StyledName>잘 때 입는 옷</StyledName>
                     </StyledGrid>
                 </Container2>
-                <StyledAdd>➕</StyledAdd>
+                <Link href="/d_add">
+                    <StyledAdd>➕</StyledAdd>
+                </Link>
             </Container>
         </>
     )

@@ -1,8 +1,11 @@
 import Link from "next/link";
 import styled from "styled-components";
+import Logo2 from "../components/Logo2";
 
 export default function Signup() {
     return (
+        <>
+        <Logo2 />
         <Container>
             <StyledH1>회원가입</StyledH1>
             <div>
@@ -27,6 +30,7 @@ export default function Signup() {
                 <StyledBtn>가입하기</StyledBtn>
             </Link>
         </Container>
+        </>
     )
 }
 
@@ -36,7 +40,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 
-margin-top: 15vh;
+margin-top: 6vh;
 `;
 
 const StyledH1 = styled.h1`

@@ -21,7 +21,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 
-margin-top: 15vh;
+margin-top: 20vh;
 `;
 
 const StyledH1 = styled.h1`

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Nav from "../components/Nav";
 import List from "../components/List";
 import Grid from "../components/Grid";
+import Link from "next/link";
 
 export default function S_Main() {
     return (
@@ -11,7 +12,9 @@ export default function S_Main() {
             <Container>
                 <List />
                 <Grid />
-                <StyledAdd>➕</StyledAdd>
+                <Link href="/m_add">
+                    <StyledAdd>➕</StyledAdd>
+                </Link>
             </Container>
         </>
     )
