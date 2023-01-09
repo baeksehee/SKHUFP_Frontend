@@ -19,8 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Link href={'/m_add'}>main_add </Link>
         <Link href={'/m_edit'}>main_edit </Link>
         <Link href={'/daily'}>daily </Link>
-        <Link href={'/d_add'}>daily_add </Link>
-        <Link href={'/d_add_detail'}>daily_add_detail</Link>
+        <Link href={'/d_add'}>daily_add</Link>
       </nav>
       <Component {...pageProps} />
     </>

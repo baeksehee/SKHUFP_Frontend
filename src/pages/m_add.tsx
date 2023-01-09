@@ -7,7 +7,7 @@ export default function M_add() {
       <Nav />
       <Container>
         <StyledForm>
-          <StyledH3>옷 등록</StyledH3>
+          <h1>옷 등록</h1>
           <ImageDiv></ImageDiv>
           <InputDiv>
             <InputSmallDiv>
@@ -58,10 +58,6 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const StyledH3 = styled.h3`
-  font-size: 48px;
-`;
-
 const ImageDiv = styled.div`
   margin-left: 12.5vw;
   margin-top: 32px;
@@ -89,13 +85,13 @@ const StyledLongSpan = styled.span`
   width: 12vw;
   float: left;
 
-  font-size: 26px;
+  font-size: 21px;
 `;
 
 const StyledSpan = styled.span`
   float: left;
 
-  font-size: 26px;
+  font-size: 21px;
 `;
 
 const InputSmallDiv = styled.div`
@@ -133,7 +129,7 @@ const StyledSelectTwo = styled.select`
 
 const StyledNameInput = styled.input`
   width: 27.5vw;
-  height: 55px;
+  height: 23px;
 
   float: right;
   text-align: center;
@@ -149,9 +145,8 @@ const StyledMemoInput = styled.input`
   height: 143px;
 
   float: right;
-  text-align: center;
 
-  font-size: 20px;
+  font-size: 15px;
 
   background-color: #efefef;
   border: none;

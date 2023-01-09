@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export default function Signup() {
@@ -22,7 +23,9 @@ export default function Signup() {
                     <StyledInput type="phonenumber" />
                 </div>
             </div>
-            <StyledBtn>가입하기</StyledBtn>
+            <Link href="/season">
+                <StyledBtn>가입하기</StyledBtn>
+            </Link>
         </Container>
     )
 }

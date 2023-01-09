@@ -1,10 +1,11 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export default function Login() {
     // const onClickAlert() => {
     //     if
     // }
-    
+
     return (
         <Container>
             <StyledH1>로그인</StyledH1>
@@ -18,7 +19,9 @@ export default function Login() {
                     <StyledInput type="password" />
                 </div>
             </div>
-            <StyledBtn>로그인하기</StyledBtn>
+            <Link href="/season">
+                <StyledBtn>로그인하기</StyledBtn>
+            </Link>
         </Container>
     )
 }

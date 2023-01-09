@@ -7,7 +7,7 @@ export default function Nav() {
         <>
             <Logo />
             <StyledNav>
-                <Link href="/season">
+                <Link href="/m_add">
                     <StyledBtn>옷 등록</StyledBtn>
                 </Link>
                 <br />
