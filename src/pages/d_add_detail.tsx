@@ -1,24 +1,28 @@
 import styled from "styled-components";
+import Nav from "../components/Nav";
 
-export default function AddDailylookTwo() {
+export default function D_add_detail() {
   return (
-    <Container>
-      <StyledForm>
-        {" "}
-        <StyledH3>
-          <StyledSpan>데일리룩 이름</StyledSpan> <StyledInput></StyledInput>
-        </StyledH3>
-        <StyledDiv>
-          <TopDiv>상의</TopDiv>
-          <OuterDiv>아우터</OuterDiv>
-          <BagDiv>가방</BagDiv>
-          <ButtonDiv>하의</ButtonDiv>
-          <ShoesDiv>신발</ShoesDiv>
-          <EtcDiv>기타</EtcDiv>
-        </StyledDiv>
-        <StyledButton>데일리룩 등록</StyledButton>
-      </StyledForm>
-    </Container>
+    <>
+      <Nav />
+      <Container>
+        <StyledForm>
+          {" "}
+          <StyledH3>
+            <StyledSpan>데일리룩 이름</StyledSpan> <StyledInput></StyledInput>
+          </StyledH3>
+          <StyledDiv>
+            <TopDiv>상의</TopDiv>
+            <OuterDiv>아우터</OuterDiv>
+            <BagDiv>가방</BagDiv>
+            <ButtonDiv>하의</ButtonDiv>
+            <ShoesDiv>신발</ShoesDiv>
+            <EtcDiv>기타</EtcDiv>
+          </StyledDiv>
+          <StyledButton>데일리룩 등록</StyledButton>
+        </StyledForm>
+      </Container>
+    </>
   );
 }
 
@@ -64,10 +68,7 @@ const StyledDiv = styled.div`
 
 const TopDiv = styled.div`
   margin: 1rem;
-  padding-left:0.9vw;
-  padding-top: 12vh;
-
-
+  
   text-align: center;
 
   background-color: #eeeeee;
@@ -75,8 +76,6 @@ const TopDiv = styled.div`
 
 const OuterDiv = styled.div`
   margin: 1rem;
-  padding-left:0.9vw;
-  padding-top: 12vh;
 
   text-align: center;
 
@@ -85,8 +84,6 @@ const OuterDiv = styled.div`
 
 const BagDiv = styled.div`
   margin: 1rem;
-  padding-left:0.9vw;
-  padding-top: 12vh;
 
   text-align: center;
 
@@ -95,8 +92,6 @@ const BagDiv = styled.div`
 
 const ButtonDiv = styled.div`
   margin: 1rem;
-  padding-left:0.9vw;
-  padding-top: 12vh;
 
   text-align: center;
 
@@ -105,8 +100,6 @@ const ButtonDiv = styled.div`
 
 const ShoesDiv = styled.div`
   margin: 1rem;
-  padding-left:0.9vw;
-  padding-top: 12vh;
 
   text-align: center;
 
@@ -115,8 +108,6 @@ const ShoesDiv = styled.div`
 
 const EtcDiv = styled.div`
   margin: 1rem;
-  padding-left:0.9vw;
-  padding-top: 12vh;
 
   text-align: center;
 
