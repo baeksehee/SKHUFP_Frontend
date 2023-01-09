@@ -16,11 +16,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <Link href={'/f_main'}>F_main </Link>
         <Link href={'/w_main'}>W_main </Link>
         <Link href={'/e_main'}>E_main </Link>
+        <Link href={'/m_add'}>main_add </Link>
+        <Link href={'/m_edit'}>main_edit </Link>
         <Link href={'/daily'}>daily </Link>
         <Link href={'/d_add'}>daily_add </Link>
-        <Link href={'/addCloset'}>addCloset </Link>
-        <Link href={'/addDailylookTwo'}>addDailylookTwo </Link>
-        <Link href={'/closetDetail'}>closetDetail </Link>
+        <Link href={'/d_add_detail'}>daily_add_detail</Link>
       </nav>
       <Component {...pageProps} />
     </>

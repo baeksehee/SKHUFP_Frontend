@@ -10,7 +10,6 @@ export default function Logo() {
 
 const StyledH1 = styled.h1`
 margin-left: 2rem;
-
 font-size: 2rem;
 color: #d0bcf2;
 `;
