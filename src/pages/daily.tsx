@@ -43,8 +43,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-
-margin-top: 10vh;
 `;
 
 const Container2 = styled.div`
