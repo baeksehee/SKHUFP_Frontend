@@ -18,6 +18,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <Link href={'/e_main'}>E_main </Link>
         <Link href={'/daily'}>daily </Link>
         <Link href={'/d_add'}>daily_add </Link>
+        <Link href={'/addCloset'}>addCloset </Link>
+        <Link href={'/addDailylookTwo'}>addDailylookTwo </Link>
+        <Link href={'/closetDetail'}>closetDetail </Link>
       </nav>
       <Component {...pageProps} />
     </>
