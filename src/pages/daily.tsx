@@ -1,4 +1,6 @@
 import Link from "next/link";
+
+// style, components
 import styled from "styled-components";
 import Nav from "../components/Nav";
 
@@ -7,25 +9,27 @@ export default function Daily() {
         <>
             <Nav />
             <Container>
-                <StyledH1>데일리룩 목록</StyledH1>
-                <Container2>
-                    <StyledGrid>
-                        <Item />
-                        <Item />
-                        <Item />
-                        <StyledName>운동복</StyledName>
-                        <StyledName>평상복</StyledName>
-                        <StyledName>최애옷</StyledName>
-                    </StyledGrid>
-                    <StyledGrid>
-                        <Item />
-                        <Item />
-                        <Item />
-                        <StyledName>데이트룩</StyledName>
-                        <StyledName>자주 입는 옷</StyledName>
-                        <StyledName>잘 때 입는 옷</StyledName>
-                    </StyledGrid>
-                </Container2>
+                <form>
+                    <h1>데일리룩 목록</h1>
+                    <Container2>
+                        <StyledGrid>
+                            <Item />
+                            <Item />
+                            <Item />
+                            <StyledName>운동복</StyledName>
+                            <StyledName>평상복</StyledName>
+                            <StyledName>최애옷</StyledName>
+                        </StyledGrid>
+                        <StyledGrid>
+                            <Item />
+                            <Item />
+                            <Item />
+                            <StyledName>데이트룩</StyledName>
+                            <StyledName>자주 입는 옷</StyledName>
+                            <StyledName>잘 때 입는 옷</StyledName>
+                        </StyledGrid>
+                    </Container2>
+                </form>
                 <Link href="/d_add">
                     <StyledAdd>➕</StyledAdd>
                 </Link>
@@ -33,10 +37,6 @@ export default function Daily() {
         </>
     )
 }
-
-const StyledH1 = styled.h1`
-margin-right: 30%;
-`;
 
 const Container = styled.div`
 display: flex;
@@ -59,7 +59,7 @@ grid-template-rows: 15vw 60px;
 `;
 
 const Item = styled.div`
-margin: 1rem;
+margin: 10px;
 
 background-color: #eeeeee;
 `;

@@ -1,12 +1,10 @@
 import Link from "next/link";
+
+// style, components
 import styled from "styled-components";
 import Logo2 from "../components/Logo";
 
 export default function Login() {
-    // const onClickAlert() => {
-    //     if
-    // }
-
     return (
         <>
             <Logo2 />
