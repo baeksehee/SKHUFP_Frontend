@@ -1,8 +1,9 @@
+import Link from "next/link";
+
 import styled from "styled-components";
 import Nav from "../components/Nav";
 import List from "../components/List";
 import Grid from "../components/Grid";
-import Link from "next/link";
 
 export default function S_Main() {
     return (

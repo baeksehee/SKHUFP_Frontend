@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-// style, components
 import styled from "styled-components";
 import Nav from "../components/Nav";
 

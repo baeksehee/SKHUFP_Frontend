@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import styled from "styled-components";
 import Grid from "../components/Grid";
 import List from "../components/List";

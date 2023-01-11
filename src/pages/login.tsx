@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-// style, components
 import styled from "styled-components";
 import Logo2 from "../components/Logo";
 
