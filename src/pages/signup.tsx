@@ -1,7 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import { useRouter } from "next/router";
 
-// style, components
 import styled from "styled-components";
 import Logo2 from "../components/Logo2";
 
@@ -14,6 +13,8 @@ const Signup = () => {
 
     const [password, setPassword] = useState<string>("");
 
+    const [rpassword, setRPassword] = useState<string>("");
+
     const onChangeName = (e: ChangeEvent<HTMLInputElement>) => {
         setUserName(e.target.value);
     };
@@ -22,15 +23,24 @@ const Signup = () => {
         setPassword(e.target.value);
     };
 
+    const onChangeRPassword = (e: ChangeEvent<HTMLInputElement>) => {
+        setRPassword(e.target.value);
+    };
+
     const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
-        axios.post("http://3.34.215.12:8080/api/auth/sign-up", {
+        axios
+        .post("http://3.34.215.12:8080/api/auth/sign-up", {
             username: username,
             password: password,
+            rpassword: rpassword,
         })
         .then((response) => {
             console.log(response.data);
             router.push('/login');
+        })
+        .catch((error) => {
+            console.log(error);
         })
     }
 
@@ -50,7 +60,7 @@ const Signup = () => {
                     </div>
                     <div>
                         <StyledSpan>비밀번호 확인</StyledSpan>
-                        <StyledInput type="text" />
+                        <StyledInput type="text" onChange={onChangeRPassword} value={rpassword} />
                     </div>
                     <div>
                         <StyledSpan>전화번호</StyledSpan>

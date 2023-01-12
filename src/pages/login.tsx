@@ -1,7 +1,5 @@
-import Link from "next/link";
-
 import styled from "styled-components";
-import Logo2 from "../components/Logo";
+import Logo2 from "../components/Logo2";
 
 export default function Login() {
     return (
@@ -19,9 +17,7 @@ export default function Login() {
                         <StyledInput type="password" />
                     </div>
                 </div>
-                <Link href="/season">
-                    <StyledBtn>로그인하기</StyledBtn>
-                </Link>
+                <StyledBtn>로그인하기</StyledBtn>
             </Container>
         </>
     )
