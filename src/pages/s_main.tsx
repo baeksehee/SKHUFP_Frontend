@@ -10,11 +10,17 @@ import instance from '../libs/api';
 
 // spring에 들어가면 api 요청 후 데이터 들어옴
 export default function S_Main() {
-    instance;
+    // instance.get('http://3.34.215.12:8080/api/clothes?seasons=spring')
+    // .then(res => {
+    //     console.log(res.data);
+    // })
+    // .catch(res => {
+    //     console.log(res.data);
+    // });
 
     axios.get('http://3.34.215.12:8080/api/clothes?seasons=spring', {
         headers: {
-            Authorization: "Bearer " + localStorage.getItem("accessToken"),
+            Authorization: "Bearer " + (typeof window !== "undefined" ? localStorage.getItem("accessToken") : '')
         }
     })
     .then(res => {
