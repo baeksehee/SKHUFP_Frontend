@@ -1,15 +1,20 @@
 import axios from "axios";
 
-const TOKEN = localStorage.getItem("ACCESS_TOKEN");
+// const TOKEN = ;
 
 // 해당 url의 server로 전달될 token
-export const instance = axios.create({
+const instance = axios.create({
   baseURL: "http://3.34.215.12:8080/",
   headers: {
     "Content-Type": "application/json",
-    Authorization: "Bearer " + TOKEN,
+    Authorization: "Bearer " + localStorage.getItem("accessToken"),
   },
 });
+
+instance.defaults.withCredentials = true;
+
+export default instance;
+
 
 // https://thinkforthink.tistory.com/372
 // access toke->refresh token
@@ -25,8 +30,8 @@ instance.interceptors.response.use(
 
     const originalRequest = config;
 
-    if (status === 403) {
-      const accessToken = localStorage.getItem("ACCESS_TOKEN");
+    if (status === 401) {
+      const accessToken = localStorage.getItem("accessToken");
       const refreshToken = localStorage.getItem("REFRESH_TOKEN");
 
       try {
@@ -44,7 +49,7 @@ instance.interceptors.response.use(
           Authorization: "Bearer " + newAccessToken,
         };
 
-        localStorage.setItem("ACCESS_TOKEN", newAccessToken);
+        localStorage.setItem("accessToken", newAccessToken);
         localStorage.setItem("REFRESH_TOKEN", newRefreshToken);
 
         return await axios(originalRequest);

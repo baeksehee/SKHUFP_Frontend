@@ -5,7 +5,25 @@ import Nav from "../components/Nav";
 import List from "../components/List";
 import Grid from "../components/Grid";
 
+import axios from "axios";
+import instance from '../libs/api';
+
+// spring에 들어가면 api 요청 후 데이터 들어옴
 export default function S_Main() {
+    instance;
+
+    axios.get('http://3.34.215.12:8080/api/clothes?seasons=spring', {
+        headers: {
+            Authorization: "Bearer " + localStorage.getItem("accessToken"),
+        }
+    })
+    .then(res => {
+        console.log(res.data);
+    })
+    .catch(res => {
+        console.log(res.data);
+    })
+
     return (
         <>
             <StyledS>봄</StyledS>

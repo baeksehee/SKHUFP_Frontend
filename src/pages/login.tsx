@@ -5,8 +5,10 @@ import styled from "styled-components";
 import Logo2 from "../components/Logo2";
 
 import axios from "axios";
+import instance from '../libs/api';
 
 const Login = () => {
+    instance;
     const router = useRouter();
 
     const [nameData, setNameData] = useState<string>("");
@@ -31,11 +33,12 @@ const Login = () => {
                 .post("http://3.34.215.12:8080/api/auth/sign-in", {
                     username: nameData,
                     password: pwData,
-                })
+                }, {withCredentials: true})
                 .then((response) => {
-                    console.log(response.data);
-                    localStorage.setItem("accessToken", response.data.accessToken);
-
+                    console.log(response.data)
+                    console.log(response.data.data.accessToken);
+                    localStorage.setItem("accessToken", response.data.data.accessToken);
+                    
                     router.push("/season");
                 })
                 .catch((e) => {

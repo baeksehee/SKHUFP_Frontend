@@ -5,7 +5,21 @@ import Grid from "../components/Grid";
 import List from "../components/List";
 import Nav from "../components/Nav";
 
+import axios from "axios";
+import instance from "../libs/api";
+
 export default function W_Main() {
+    // instance;
+
+    // axios.get('http://3.34.215.12:8080/api/clothes?seasons=winter', {
+    // })
+    // .then(res => {
+    //     console.log(res.data);
+    // })
+    // .catch(res => {
+    //     console.log(res.data);
+    // })
+    
     return (
         <>
             <StyledS>겨울</StyledS>
