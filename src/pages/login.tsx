@@ -28,7 +28,7 @@ const Login = () => {
             alert("아이디와 비밀번호를 입력해 주세요.");
         } else {
             axios
-                .post("/login", {
+                .post("http://3.34.215.12:8080/api/auth/sign-in", {
                     username: nameData,
                     password: pwData,
                 })

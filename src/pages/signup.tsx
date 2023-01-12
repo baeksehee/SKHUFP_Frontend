@@ -31,7 +31,7 @@ const Signup = () => {
     const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
         axios
-            .post("/sign-up", {
+            .post("http://3.34.215.12:8080/api/auth/sign-up", {
                 username: username,
                 password: password,
                 rpassword: rpassword,
