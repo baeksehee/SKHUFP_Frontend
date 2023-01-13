@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 import styled from "styled-components";
-import Grid from "../components/Grid";
-import List from "../components/List";
 import Nav from "../components/Nav";
+import List from "../components/List";
+import Grid from "../components/Grid";
 
 import axios from "axios";
 

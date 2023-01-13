@@ -1,6 +1,7 @@
 import axios from "axios";
 
-let TOKEN = typeof window !== "undefined" ? localStorage.getItem("accessToken") : '';
+let TOKEN =
+  typeof window !== "undefined" ? localStorage.getItem("accessToken") : "";
 // if (typeof window !== 'undefined') {
 //   TOKEN = localStorage.getItem("accessToken");
 // }
@@ -19,8 +20,8 @@ let TOKEN = typeof window !== "undefined" ? localStorage.getItem("accessToken") 
 const instance = axios.create({
   baseURL: "https://skhufp.ddns.net",
   headers: {
-      Authorization: "Bearer " + TOKEN,
-    }
+    Authorization: "Bearer " + TOKEN,
+  },
 });
 
 // instance.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("accessToken")}`;
