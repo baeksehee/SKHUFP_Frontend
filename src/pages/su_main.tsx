@@ -5,7 +5,20 @@ import Grid from "../components/Grid";
 import List from "../components/List";
 import Nav from "../components/Nav";
 
+import axios from "axios";
+
 export default function SU_Main() {
+    axios.get('https://skhufp.ddns.net/api/clothes?seasons=summer', {
+        headers: {
+            Authorization: "Bearer " + (typeof window !== "undefined" ? localStorage.getItem("accessToken") : '')
+        }
+    })
+    .then(res => {
+        console.log(res.data);
+    })
+    .catch(res => {
+        console.log(res.data);
+    })
     
     return (
         <>

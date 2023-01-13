@@ -1,6 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
-
 
 let TOKEN = typeof window !== "undefined" ? localStorage.getItem("accessToken") : '';
 // if (typeof window !== 'undefined') {
@@ -16,21 +14,19 @@ let TOKEN = typeof window !== "undefined" ? localStorage.getItem("accessToken") 
 //     setToken(null);
 //   }
 // })
+
 // 해당 url의 server로 전달될 token
 const instance = axios.create({
-  baseURL: "http://3.34.215.12:8080/",
+  baseURL: "https://skhufp.ddns.net",
   headers: {
       Authorization: "Bearer " + TOKEN,
     }
 });
 
-
-
 // instance.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("accessToken")}`;
 instance.defaults.withCredentials = true;
 
 export default instance;
-
 
 // https://thinkforthink.tistory.com/372
 // access toke->refresh token

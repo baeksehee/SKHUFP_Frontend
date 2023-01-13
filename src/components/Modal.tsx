@@ -27,14 +27,14 @@ export default function Modal({
 
 const ModalContainer = styled.div`
   position: fixed;
-  top: 25%;
+  top: 10%;
   left: 0;
   bottom: 0;
   right: 0;
 `;
 
 const DialogBox = styled.dialog`
-  width: 30vw;
+  width: 43vw;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -43,8 +43,9 @@ const DialogBox = styled.dialog`
   border: 1px solid black;
   border-radius: 3%;
   box-sizing: border-box;
+  box-shadow: 5px 5px 5px gray;
   background-color: white;
-  z-index: 10000;
+  z-index: 10;
 `;
 
 const Backdrop = styled.div`
@@ -52,5 +53,7 @@ const Backdrop = styled.div`
   height: 100vh;
   position: fixed;
   top: 0;
-  z-index: 9999; ;
+  z-index: 1;
+
+  backdrop-filter: blur(1px);
 `;

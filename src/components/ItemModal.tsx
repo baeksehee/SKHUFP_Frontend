@@ -32,14 +32,13 @@ const Item = styled.div`
 `;
 
 const StyledDeleteBtn = styled.button`
-  margin-left: 28vw;
-  margin-right: 2vw;
-  padding-left: 1vw;
+  margin-left: 33vw;
 
   font-size: 2rem;
 
   background-color: white;
   border: none;
+  cursor: pointer;
 `;
 
 const StyledBtnDiv = styled.div`
@@ -47,9 +46,8 @@ const StyledBtnDiv = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding-left: 18vw;
-  padding-right: 2vw;
-  padding-top: 330px;
+  padding-left: 20vw;
+  padding-top: 320px;
 
   gap: 1vw;
 `;
