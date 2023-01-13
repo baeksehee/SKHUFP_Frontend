@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import styled from "styled-components";
 
-export default function Season() {
+const Season = () => {
     return (
         <Container>
             <StyledH1>My<br />Closet</StyledH1>
@@ -22,12 +22,11 @@ export default function Season() {
                     <StyledBtn>겨울</StyledBtn>
                 </Link>
             </StyledDiv>
-            <Link href="/e_main">
-                <AnotherBtn>기타</AnotherBtn>
-            </Link>
         </Container>
     )
 }
+
+export default Season;
 
 const Container = styled.div`
 display: flex;
@@ -66,25 +65,6 @@ cursor: pointer;
 
 &:hover{
     color: #d0bcf2;
-    background-color: white;
-}
-`;
-
-const AnotherBtn = styled.button`
-width: 21vw;
-height: 2rem;
-margin: 5px;
-
-border: 1px solid #d9d9d9;
-border-radius: 5px;
-font-size: 1rem;
-color: white;
-background-color: #d9d9d9;
-
-cursor: pointer;
-
-&:hover{
-    color: #d9d9d9;
     background-color: white;
 }
 `;

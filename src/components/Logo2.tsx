@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import styled from "styled-components";
 
-export default function Logo() {
+export default function Logo2() {
     return (
         <div>
             <Link href="/" style={{ textDecoration: "none" }}>

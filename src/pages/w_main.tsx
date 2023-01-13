@@ -6,6 +6,7 @@ import List from "../components/List";
 import Nav from "../components/Nav";
 
 export default function W_Main() {
+    
     return (
         <>
             <StyledS>겨울</StyledS>

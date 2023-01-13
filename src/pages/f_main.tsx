@@ -6,6 +6,7 @@ import List from "../components/List";
 import Nav from "../components/Nav";
 
 export default function F_Main() {
+    
     return (
         <>
             <StyledS>가을</StyledS>

@@ -1,31 +1,81 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 import styled from "styled-components";
-import Logo2 from "../components/Logo";
+import Logo2 from "../components/Logo2";
 
-export default function Login() {
+import axios from "axios";
+import instance from '../libs/api';
+
+const Login = () => {
+    instance;
+    const router = useRouter();
+
+    const [nameData, setNameData] = useState<string>("");
+
+    const [pwData, setPwData] = useState<string>("");
+
+    const onChangeName = (e: ChangeEvent<HTMLInputElement>) => {
+        setNameData(e.target.value);
+    };
+
+    const onChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
+        setPwData(e.target.value);
+    };
+
+    const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (nameData === "" || pwData === "") {
+            alert("아이디와 비밀번호를 입력해 주세요.");
+        } else {
+            axios
+                .post("http://3.34.215.12:8080/api/auth/sign-in", {
+                    username: nameData,
+                    password: pwData,
+                }, {withCredentials: true})
+                .then((response) => {
+                    console.log(response.data)
+                    console.log(response.data.data.accessToken);
+                    localStorage.setItem("accessToken", response.data.data.accessToken);
+                    
+                    router.push("/season");
+                })
+                .catch((e) => {
+                    console.log(e);
+                    alert(
+                        "아이디 혹은 비밀번호를 맞게 입력해 주세요."
+                    );
+                });
+        }
+    };
+
     return (
         <>
             <Logo2 />
             <Container>
-                <StyledH1>로그인</StyledH1>
-                <div>
+                <StyledForm onSubmit={onSubmit}>
+                    <StyledH1>로그인</StyledH1>
                     <div>
-                        <StyledSpan>아이디</StyledSpan>
-                        <StyledInput type="text" />
+                        <div>
+                            <StyledSpan>아이디</StyledSpan>
+                            <StyledInput type="text" onChange={onChangeName}
+                                value={nameData} />
+                        </div>
+                        <div>
+                            <StyledSpan>비밀번호</StyledSpan>
+                            <StyledInput type="password" onChange={onChangePassword}
+                                value={pwData} />
+                        </div>
                     </div>
-                    <div>
-                        <StyledSpan>비밀번호</StyledSpan>
-                        <StyledInput type="password" />
-                    </div>
-                </div>
-                <Link href="/season">
-                    <StyledBtn>로그인하기</StyledBtn>
-                </Link>
+                    <StyledBtn type="submit">로그인하기</StyledBtn>
+                </StyledForm>
             </Container>
         </>
     )
 }
+
+export default Login;
 
 const Container = styled.div`
 display: flex;
@@ -34,6 +84,13 @@ justify-content: center;
 align-items: center;
 
 margin-top: 12vh;
+`;
+
+const StyledForm = styled.form`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 `;
 
 const StyledH1 = styled.h1`

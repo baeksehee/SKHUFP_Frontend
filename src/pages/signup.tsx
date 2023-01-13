@@ -1,7 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import { useRouter } from "next/router";
 
-// style, components
 import styled from "styled-components";
 import Logo2 from "../components/Logo2";
 
@@ -9,10 +8,13 @@ import axios from "axios";
 
 const Signup = () => {
     const router = useRouter();
-    
+
     const [username, setUserName] = useState<string>("");
 
     const [password, setPassword] = useState<string>("");
+
+    // password 재입력
+    const [rpassword, setRPassword] = useState<string>("");
 
     const onChangeName = (e: ChangeEvent<HTMLInputElement>) => {
         setUserName(e.target.value);
@@ -22,42 +24,53 @@ const Signup = () => {
         setPassword(e.target.value);
     };
 
+    const onChangeRPassword = (e: ChangeEvent<HTMLInputElement>) => {
+        setRPassword(e.target.value);
+    };
+
     const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
-        axios.post("http://3.34.215.12:8080/api/auth/sign-up", {
-            username: username,
-            password: password,
-        })
-        .then((response) => {
-            console.log(response.data);
-            router.push('/login');
-        })
+        axios
+            .post("http://3.34.215.12:8080/api/auth/sign-up", {
+                username: username,
+                password: password,
+                rpassword: rpassword,
+            })
+            .then((response) => {
+                console.log(response.data);
+                router.push('/login');
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     return (
         <>
             <Logo2 />
             <Container>
-                <form onSubmit={onSubmit}>
-                <StyledH1>회원가입</StyledH1>
+                <StyledForm onSubmit={onSubmit}>
+                    <StyledH1>회원가입</StyledH1>
                     <div>
-                        <StyledSpan>아이디</StyledSpan>
-                        <StyledInput type="text" onChange={onChangeName} value={username} />
-                    </div>
-                    <div>
-                        <StyledSpan>비밀번호</StyledSpan>
-                        <StyledInput type="text" onChange={onChangePassword} value={password} />
-                    </div>
-                    <div>
-                        <StyledSpan>비밀번호 확인</StyledSpan>
-                        <StyledInput type="text" />
-                    </div>
-                    <div>
-                        <StyledSpan>전화번호</StyledSpan>
-                        <StyledInput type="phonenumber" />
+                        <div>
+                            <StyledSpan>아이디</StyledSpan>
+                            <StyledInput type="text" value={username} onChange={onChangeName} />
+                        </div>
+                        <div>
+                            <StyledSpan>비밀번호</StyledSpan>
+                            <StyledInput type="text" value={password} onChange={onChangePassword} />
+                        </div>
+                        <div>
+                            <StyledSpan>비밀번호 확인</StyledSpan>
+                            <StyledInput type="text" value={rpassword} onChange={onChangeRPassword} />
+                        </div>
+                        <div>
+                            <StyledSpan>전화번호</StyledSpan>
+                            <StyledInput type="phonenumber" />
+                        </div>
                     </div>
                     <StyledBtn type="submit">가입하기</StyledBtn>
-                </form>
+                </StyledForm>
             </Container>
         </>
     )
@@ -72,6 +85,13 @@ justify-content: center;
 align-items: center;
 
 margin-top: 6vh;
+`;
+
+const StyledForm = styled.form`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 `;
 
 const StyledH1 = styled.h1`
