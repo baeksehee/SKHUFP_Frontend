@@ -18,7 +18,7 @@ export default function S_Main() {
     //     console.log(res.data);
     // });
 
-    axios.get('http://3.34.215.12:8080/api/clothes?seasons=spring', {
+    axios.get('https://skhufp.ddns.net/api/clothes?seasons=spring', {
         headers: {
             Authorization: "Bearer " + (typeof window !== "undefined" ? localStorage.getItem("accessToken") : '')
         }

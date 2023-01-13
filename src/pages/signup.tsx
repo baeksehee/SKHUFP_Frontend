@@ -31,7 +31,7 @@ const Signup = () => {
     const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
         axios
-            .post("http://3.34.215.12:8080/api/auth/sign-up", {
+            .post("https://skhufp.ddns.net/api/auth/sign-up", {
                 username: username,
                 password: password,
                 rpassword: rpassword,
@@ -64,10 +64,6 @@ const Signup = () => {
                             <StyledSpan>비밀번호 확인</StyledSpan>
                             <StyledInput type="text" value={rpassword} onChange={onChangeRPassword} />
                         </div>
-                        <div>
-                            <StyledSpan>전화번호</StyledSpan>
-                            <StyledInput type="phonenumber" />
-                        </div>
                     </div>
                     <StyledBtn type="submit">가입하기</StyledBtn>
                 </StyledForm>
@@ -84,7 +80,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 
-margin-top: 6vh;
+margin-top: 8vh;
 `;
 
 const StyledForm = styled.form`
