@@ -1,6 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
-
 
 let TOKEN = typeof window !== "undefined" ? localStorage.getItem("accessToken") : '';
 // if (typeof window !== 'undefined') {
@@ -16,6 +14,7 @@ let TOKEN = typeof window !== "undefined" ? localStorage.getItem("accessToken") 
 //     setToken(null);
 //   }
 // })
+
 // 해당 url의 server로 전달될 token
 const instance = axios.create({
   baseURL: "https://skhufp.ddns.net",
@@ -28,7 +27,6 @@ const instance = axios.create({
 instance.defaults.withCredentials = true;
 
 export default instance;
-
 
 // https://thinkforthink.tistory.com/372
 // access toke->refresh token
