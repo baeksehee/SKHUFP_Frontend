@@ -7,8 +7,6 @@ import axios from "axios";
 import router from "next/router";
 
 export default function M_add() {
-
-
   const [season, setSeason] = useState<string>('spring');
 
   const [category, setCategory] = useState<string>('tops');
@@ -30,10 +28,8 @@ export default function M_add() {
 
     console.log(files);
     
-
       formData.append("file", e.currentTarget.value[0])
       console.log(formData);
-      
       
     setFile(files);
   };
@@ -136,7 +132,7 @@ export default function M_add() {
           <ImgInput type="file" onChange={onChangeFile} accept="image/*" />
           <InputDiv>
             <InputSmallDiv>
-              <StyledLongSpan>계절(복수선택)</StyledLongSpan>
+              <StyledLongSpan>계절</StyledLongSpan>
               <StyledSelect onChange={onChangeSeason} name="season">
                 <option value="spring" selected>봄</option>
                 <option value="summer">여름</option>

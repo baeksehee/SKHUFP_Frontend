@@ -3,13 +3,17 @@ import styled from "styled-components";
 export default function List() {
     return(
         <StyledNav>
-            <StyledBtn>전체</StyledBtn>
-            |
             <StyledBtn>상의</StyledBtn>
             |
             <StyledBtn>하의</StyledBtn>
             |
             <StyledBtn>아우터</StyledBtn>
+            |
+            <StyledBtn>신발</StyledBtn>
+            |
+            <StyledBtn>가방</StyledBtn>
+            |
+            <StyledBtn>잡화</StyledBtn>
         </StyledNav>
     )
 }
