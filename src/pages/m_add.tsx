@@ -1,24 +1,140 @@
-import Link from "next/link";
+import { ChangeEvent, useState } from "react";
 
 import styled from "styled-components";
 import Nav from "../components/Nav";
 
+import axios from "axios";
+import router from "next/router";
+
 export default function M_add() {
+  const [season, setSeason] = useState<string>('spring');
+
+  const [category, setCategory] = useState<string>('tops');
+
+  const [name, setName] = useState<string>('');
+
+  const [comment, setComment] = useState<string>('');
+
+  const [file, setFile] = useState<File>();
+
+  const onChangeFile = (e: ChangeEvent<HTMLInputElement>) => {
+    const formData = new FormData();
+    // formData.append("name", "file")
+    console.log(e.target.files);
+    const target = e.currentTarget;
+    const files = (target.files as FileList)[0];
+    // e.target.files instanceof FileList
+    //   ? formData.append("file", e.target.files[0]) : 'handle exception'
+
+    console.log(files);
+    
+      formData.append("file", e.currentTarget.value[0])
+      console.log(formData);
+      
+    setFile(files);
+  };
+
+  const onChangeSeason = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSeason(e.target.value);
+  }
+
+  const onChangeCategory = (e: ChangeEvent<HTMLSelectElement>) => {
+    setCategory(e.target.value);
+  }
+  const onChangeName = (e: ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  }
+  const onChangeComment = (e: ChangeEvent<HTMLInputElement>) => {
+    setComment(e.target.value);
+  }
+
+  // const file = new FormData();
+  // file.append("name", "file");
+  // file.append("key", e.target.files[0])
+
+  const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // console.log(localStorage.getItem("accessToken"));
+
+    // axios.post('https://skhufp.ddns.net/api/clothes/{id}/image', {
+    //   data: file,
+
+    // }, {withCredentials: true,       headers: {
+    //   "Content-Type": "multipart/form-data",
+    //   "Authorization": "Bearer " + localStorage.getItem("accessToken"),
+    //   withCredentials: true,
+    // },})
+    //   .then(res => {
+    //     console.log(res.data);
+    //     router.push('/s_main');
+    //   })
+    //   .catch(res => {
+    //     console.log(res.data);
+    //   })
+
+    console.log({
+      season: [season],
+      category: category,
+      name: name,
+      comment: comment,
+    });
+
+    axios.post('https://skhufp.ddns.net/api/clothes', {
+      seasons: [season],
+      type: category,
+      name: name,
+      comment: comment,
+    }, {
+      withCredentials: true,
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + localStorage.getItem("accessToken"),
+        withCredentials: true,
+      },
+    })
+      .then(res => {
+        // console.log(file);
+        if (file === undefined) {
+          router.push('/s_main');
+          return;
+        }
+
+        const id: number = res.data.data.id;
+        const formData = new FormData();
+        formData.append('file', file);
+        axios.post(`https://skhufp.ddns.net/api/clothes/${id}/image`, formData, {
+          withCredentials: true, headers: {
+            "Content-Type": "multipart/form-data",
+            "Authorization": "Bearer " + localStorage.getItem("accessToken"),
+            withCredentials: true,
+          },
+        })
+          .then(res => {
+            console.log(res.data);
+          })
+          .catch(res => {
+            console.log(res.data);
+          })
+        router.push('/s_main');
+      })
+      .catch(res => {
+        console.log(res.data);
+      })
+  }
+
   return (
     <>
       <Nav />
       <Container>
-        <StyledForm>
+        <StyledForm onSubmit={onSubmit}>
           <h1>옷 등록</h1>
-          <ImageDiv></ImageDiv>
+          <ImgInput type="file" onChange={onChangeFile} accept="image/*" />
           <InputDiv>
             <InputSmallDiv>
-              <StyledLongSpan>계절(복수선택)</StyledLongSpan>
-              <StyledSelect name="season">
-                <option value="spring" selected>
-                  {" "}
-                  봄
-                </option>
+              <StyledLongSpan>계절</StyledLongSpan>
+              <StyledSelect onChange={onChangeSeason} name="season">
+                <option value="spring" selected>봄</option>
                 <option value="summer">여름</option>
                 <option value="autumn">가을</option>
                 <option value="winter">겨울</option>
@@ -26,30 +142,25 @@ export default function M_add() {
             </InputSmallDiv>
             <InputSmallDiv>
               <StyledLongSpan>카테고리(택1)</StyledLongSpan>
-              <StyledSelectTwo name="season">
-                <option value="1" selected>
-                  전체
-                </option>
-                <option value="2">상의</option>
-                <option value="3">하의</option>
-                <option value="4">아우터</option>
-                <option value="5">신발</option>
-                <option value="6">가방</option>
-                <option value="7">잡화</option>
+              <StyledSelectTwo onChange={onChangeCategory} name="season">
+                <option value="tops" selected>상의</option>
+                <option value="bottoms">하의</option>
+                <option value="outerwear">아우터</option>
+                <option value="shoes">신발</option>
+                <option value="bags">가방</option>
+                <option value="etc">잡화</option>
               </StyledSelectTwo>
             </InputSmallDiv>
             <InputSmallDiv>
               <StyledSpan>이름</StyledSpan>
-              <StyledNameInput></StyledNameInput>
+              <StyledNameInput onChange={onChangeName}></StyledNameInput>
             </InputSmallDiv>
             <InputSmallDiv>
               <StyledSpan>메모</StyledSpan>
-              <StyledMemoInput></StyledMemoInput>
+              <StyledMemoInput onChange={onChangeComment}></StyledMemoInput>
             </InputSmallDiv>
           </InputDiv>
-          <Link href="s_main">
-            <StyledButton>옷 등록</StyledButton>
-          </Link>
+          <StyledButton>옷 등록</StyledButton>
         </StyledForm>
       </Container>
     </>
@@ -62,7 +173,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const ImageDiv = styled.div`
+const ImgInput = styled.input`
   margin-left: 12.5vw;
   margin-top: 32px;
 
